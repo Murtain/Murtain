@@ -1,4 +1,4 @@
-### Uranus 概述
+### 概述
 
 Uranus 是包含常用模块的轻量快速开发应用程序框架。
 
@@ -13,3 +13,7 @@ Uranus 是包含常用模块的轻量快速开发应用程序框架。
 - [ ] 配置管理（Configuration Management）
 - [ ] 缓存管理（Cache Management）
 - [ ] 分布式锁（Distributed Lock）
+
+### LICENSE
+
+[MIT](https://github.com/Murtain/Uranus/blob/master/LICENSE)
