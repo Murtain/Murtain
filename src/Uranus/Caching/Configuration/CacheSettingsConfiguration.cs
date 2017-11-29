@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Uranus.Configuration
 {
-    public class UranusConfiguration
+    public class CacheSettingsConfiguration
     {
     }
 }

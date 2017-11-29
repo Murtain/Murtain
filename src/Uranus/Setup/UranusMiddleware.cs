@@ -16,7 +16,7 @@ namespace Microsoft.AspNetCore.Builder
             return services;
         }
 
-        public static IApplicationBuilder UseUranus(this IApplicationBuilder builder, UranusConfiguration configuration = null)
+        public static IApplicationBuilder UseUranus(this IApplicationBuilder builder, CacheSettingsConfiguration configuration = null)
         {
             if (builder == null)
                 throw new ArgumentNullException(nameof(builder));

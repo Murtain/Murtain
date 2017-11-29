@@ -8,6 +8,7 @@ namespace Uranus.Domain
     public class AuditedEntity : AuditedEntity<long>
     {
     }
+
     public class AuditedEntity<TPrimaryKey> : Entity<TPrimaryKey>, IAuditedEntity
     {
         /// <summary>

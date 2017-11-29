@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.AutoMapper", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.EntityFramework", "XUnit.Uranus.EntityFramework\XUnit.Uranus.EntityFramework.csproj", "{D9010086-6FFD-46DE-A528-5FA8207F70FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uranus.Configuration", "src\Uranus.Configuration\Uranus.Configuration.csproj", "{E63D24BF-2428-4727-B3DF-81A20AC4D8EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63D24BF-2428-4727-B3DF-81A20AC4D8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63D24BF-2428-4727-B3DF-81A20AC4D8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63D24BF-2428-4727-B3DF-81A20AC4D8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63D24BF-2428-4727-B3DF-81A20AC4D8EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

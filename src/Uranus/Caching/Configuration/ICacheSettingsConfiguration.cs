@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Uranus.Configuration
+namespace Uranus.Cache.Configuration
 {
-    class IUranusConfiguration
+    public interface ICacheSettingsConfiguration
     {
     }
 }
