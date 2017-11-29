@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus", "Uranus\Uranus.csproj", "{305738F8-F4D4-43C2-BD69-883DAE83086F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uranus.AutoMapper", "Uranus.AutoMapper\Uranus.AutoMapper.csproj", "{7F48EED4-DED0-4B24-B32A-991F61077BD7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uranus.EntityFramework", "Uranus.EntityFramework\Uranus.EntityFramework.csproj", "{2869CD9A-CD9F-4D46-AE74-2A5562334A99}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XUnit", "XUnit", "{6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus", "XUnit.Uranus\XUnit.Uranus.csproj", "{E39268CB-964E-45B1-8BDE-0B47968E5231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Uranus", "test\XUnit.Uranus\XUnit.Uranus.csproj", "{AC954D13-63CA-40F9-9329-361178818F99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus", "src\Uranus\Uranus.csproj", "{EE0A668D-ACF1-4E32-BA55-638F8F02972F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus.AutoMapper", "src\Uranus.AutoMapper\Uranus.AutoMapper.csproj", "{3789CC1D-1572-4456-B7A7-CEE20966AFE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus.EntityFramework", "src\Uranus.EntityFramework\Uranus.EntityFramework.csproj", "{F241652F-790D-4B32-8D5C-D5A6A582D080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.AutoMapper", "XUnit.Uranus.AutoMapper\XUnit.Uranus.AutoMapper.csproj", "{CB8DA77E-7E3F-4977-B679-ED31CCC24278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.EntityFramework", "XUnit.Uranus.EntityFramework\XUnit.Uranus.EntityFramework.csproj", "{D9010086-6FFD-46DE-A528-5FA8207F70FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,28 +23,38 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{305738F8-F4D4-43C2-BD69-883DAE83086F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{305738F8-F4D4-43C2-BD69-883DAE83086F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{305738F8-F4D4-43C2-BD69-883DAE83086F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{305738F8-F4D4-43C2-BD69-883DAE83086F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F48EED4-DED0-4B24-B32A-991F61077BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F48EED4-DED0-4B24-B32A-991F61077BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F48EED4-DED0-4B24-B32A-991F61077BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F48EED4-DED0-4B24-B32A-991F61077BD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2869CD9A-CD9F-4D46-AE74-2A5562334A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2869CD9A-CD9F-4D46-AE74-2A5562334A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2869CD9A-CD9F-4D46-AE74-2A5562334A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2869CD9A-CD9F-4D46-AE74-2A5562334A99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E39268CB-964E-45B1-8BDE-0B47968E5231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E39268CB-964E-45B1-8BDE-0B47968E5231}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E39268CB-964E-45B1-8BDE-0B47968E5231}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E39268CB-964E-45B1-8BDE-0B47968E5231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC954D13-63CA-40F9-9329-361178818F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC954D13-63CA-40F9-9329-361178818F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC954D13-63CA-40F9-9329-361178818F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC954D13-63CA-40F9-9329-361178818F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0A668D-ACF1-4E32-BA55-638F8F02972F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0A668D-ACF1-4E32-BA55-638F8F02972F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0A668D-ACF1-4E32-BA55-638F8F02972F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0A668D-ACF1-4E32-BA55-638F8F02972F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3789CC1D-1572-4456-B7A7-CEE20966AFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3789CC1D-1572-4456-B7A7-CEE20966AFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3789CC1D-1572-4456-B7A7-CEE20966AFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3789CC1D-1572-4456-B7A7-CEE20966AFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F241652F-790D-4B32-8D5C-D5A6A582D080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F241652F-790D-4B32-8D5C-D5A6A582D080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F241652F-790D-4B32-8D5C-D5A6A582D080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F241652F-790D-4B32-8D5C-D5A6A582D080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB8DA77E-7E3F-4977-B679-ED31CCC24278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB8DA77E-7E3F-4977-B679-ED31CCC24278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB8DA77E-7E3F-4977-B679-ED31CCC24278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB8DA77E-7E3F-4977-B679-ED31CCC24278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9010086-6FFD-46DE-A528-5FA8207F70FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E39268CB-964E-45B1-8BDE-0B47968E5231} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{AC954D13-63CA-40F9-9329-361178818F99} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{CB8DA77E-7E3F-4977-B679-ED31CCC24278} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{D9010086-6FFD-46DE-A528-5FA8207F70FE} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94047328-5F95-4078-82B5-1B22DBC505B8}

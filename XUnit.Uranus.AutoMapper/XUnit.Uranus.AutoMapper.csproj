@@ -12,8 +12,4 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Uranus\Uranus.csproj" />
-  </ItemGroup>
-
 </Project>
