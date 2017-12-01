@@ -176,7 +176,7 @@ namespace Uranus.Extensions
         public static T TryAs<T>(this object obj)
             where T : class
         {
-            return (T)obj;
+            return obj == null ? null : (T)obj;
         }
 
         /// <summary>

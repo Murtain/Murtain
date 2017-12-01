@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Uranus.Configuration
+namespace Uranus.Caching.Configuration
 {
-    public class CacheSettingsConfiguration
+    public class CacheSettingsConfiguration : ICacheSettingsConfiguration
     {
     }
 }

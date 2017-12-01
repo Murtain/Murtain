@@ -1,18 +1,17 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-using Uranus.Configuration.Models;
-
-namespace Uranus.Configuration.Provider
+namespace Uranus.GlobalSetting.Provider
 {
-    public abstract class GlobalSettingProvider : IGlobalSettingProvider
+    public abstract class GlobalSettingProvider
     {
         /// <summary>
         /// Gets all setting definitions provided by this provider.
         /// </summary>
         /// <returns>List of settings</returns>
-        public abstract IEnumerable<GlobalSetting> GetSettings();
+        public abstract IEnumerable<Models.GlobalSetting> GetSettings();
     }
 }

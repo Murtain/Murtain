@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Uranus.Cache.Configuration
+namespace Uranus.Caching.Configuration
 {
     public interface ICacheSettingsConfiguration
     {

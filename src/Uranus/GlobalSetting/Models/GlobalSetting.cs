@@ -4,13 +4,28 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Uranus.Domain;
 
-namespace Uranus.Configuration.Models
+namespace Uranus.GlobalSetting.Models
 {
     public class GlobalSetting : Entity
     {
         public GlobalSetting()
         {
             this.Scope = GlobalSettingScope.Application;
+        }
+
+        public GlobalSetting(string name, string value)
+        {
+            this.Name = name;
+            this.Value = value;
+        }
+
+        public GlobalSetting(string displayName, string name, string value, string group, string description, GlobalSettingScope scope)
+            : this(name, value)
+        {
+            this.DisplayName = displayName;
+            this.Group = group;
+            this.Description = description;
+            this.Scope = scope;
         }
         /// <summary>
         /// Unique name of the Setting.

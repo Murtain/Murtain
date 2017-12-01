@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Uranus.Configuration.Models
+namespace Uranus.GlobalSetting.Models
 {
     public enum GlobalSettingScope
     {
