@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 
 using Uranus.GlobalSetting.Models;
 
-namespace Uranus.GlobalSetting
+namespace Uranus.GlobalSetting.Store
 {
     /// <summary>
     /// This interface is used to get/set settings from/to a data source (database).

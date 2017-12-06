@@ -19,10 +19,26 @@ namespace Uranus.Builder
 
         public static IUranusBuilder AddCacheManager(this IUranusBuilder builder, Action<ICacheSettingsConfiguration> setupAction)
         {
-            builder.Services.Configure(setupAction);
+            builder.Services.AddSingleton<ICacheSettingsConfiguration>(provider =>
+            {
+                var c = new CacheSettingsConfiguration();
+                setupAction(c);
+                return c;
+            });
 
+            builder.Services.AddSingleton<ICacheSettingManager, CacheSettingManager>();
             builder.Services.AddSingleton<ICacheSettingsConfiguration, CacheSettingsConfiguration>();
             builder.Services.AddSingleton<ICacheManager, MemoryCacheManager>();
+
+            builder.Services.Scan(scan =>
+            {
+                scan.FromApplicationDependencies()
+                          .AddClasses(c => c.AssignableTo(typeof(CacheSettingProvider)))
+                          .AsSelf()
+                          .WithSingletonLifetime();
+            });
+
+
             return builder;
         }
 

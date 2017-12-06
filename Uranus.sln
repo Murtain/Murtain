@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus.AutoMapper", "src\Ur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uranus.EntityFramework", "src\Uranus.EntityFramework\Uranus.EntityFramework.csproj", "{F241652F-790D-4B32-8D5C-D5A6A582D080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.Caching", "test\XUnit.Uranus.Caching\XUnit.Uranus.Caching.csproj", "{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Uranus.Caching", "test\XUnit.Uranus.Caching\XUnit.Uranus.Caching.csproj", "{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.GlobalSetting", "test\XUnit.Uranus.GlobalSetting\XUnit.Uranus.GlobalSetting.csproj", "{DE0D9080-7E38-457F-B781-97585E34F550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Uranus.UnitOfWork", "test\XUnit.Uranus.UnitOfWork\XUnit.Uranus.UnitOfWork.csproj", "{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Uranus.EntityFramework", "test\XUnit.Uranus.EntityFramework\XUnit.Uranus.EntityFramework.csproj", "{24795A71-A4F5-4BD8-8600-BDDA5E991553}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,18 @@ Global
 		{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0D9080-7E38-457F-B781-97585E34F550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0D9080-7E38-457F-B781-97585E34F550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0D9080-7E38-457F-B781-97585E34F550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0D9080-7E38-457F-B781-97585E34F550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24795A71-A4F5-4BD8-8600-BDDA5E991553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24795A71-A4F5-4BD8-8600-BDDA5E991553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24795A71-A4F5-4BD8-8600-BDDA5E991553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24795A71-A4F5-4BD8-8600-BDDA5E991553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +66,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AC954D13-63CA-40F9-9329-361178818F99} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
 		{7DCEAE38-E7F9-41B1-B6A5-15FF462C59C4} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{DE0D9080-7E38-457F-B781-97585E34F550} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{937D5E2E-EA9F-4C2E-866C-380A0A6F23CC} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
+		{24795A71-A4F5-4BD8-8600-BDDA5E991553} = {6A292BE2-ABD0-4A5C-BFB2-C662A8E70EDC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94047328-5F95-4078-82B5-1B22DBC505B8}

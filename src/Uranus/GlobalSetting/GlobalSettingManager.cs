@@ -10,6 +10,7 @@ using Uranus.Extensions;
 using Uranus.GlobalSetting.Configuration;
 using Uranus.GlobalSetting.Models;
 using Uranus.GlobalSetting.Provider;
+using Uranus.GlobalSetting.Store;
 
 namespace Uranus.GlobalSetting
 {
@@ -28,7 +29,7 @@ namespace Uranus.GlobalSetting
             this.serviceProvider = serviceProvider;
             this.globalSettingStore = globalSettingStore;
 
-            //ConfigurationLoadAsync();
+            ConfigurationLoadAsync();
         }
 
 
