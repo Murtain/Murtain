@@ -11,6 +11,5 @@ namespace Uranus.AutoMapper.Configuration
     public interface IAutoMapperConfiguration
     {
         List<Action<IMapperConfigurationExpression>> Configurators { get; }
-        string AssemblyLoadingPattern { get; set; }
     }
 }

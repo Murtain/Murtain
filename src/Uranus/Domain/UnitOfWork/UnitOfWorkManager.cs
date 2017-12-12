@@ -40,16 +40,16 @@ namespace Uranus.Domain.UnitOfWork
 
         public IUnitOfWork Begin(UnitOfWorkOption option)
         {
-            if (option.Scope == TransactionScopeOption.Required && Current != null)
+            if (option?.Scope == TransactionScopeOption.Required && Current != null)
             {
                 return unitOfWorkProvider.Current;
             }
 
             var uow = serviceProvider.GetService(typeof(IUnitOfWork)).TryAs<UnitOfWork.UnitOfWorkBase>();
 
-            uow.Completed += Uow_Completed; ;
+            uow.Completed += Uow_Completed;
             uow.Failed += Uow_Failed;
-            uow.Disposed += Uow_Disposed; ;
+            uow.Disposed += Uow_Disposed;
 
             uow.BeforeBegin(option);
 

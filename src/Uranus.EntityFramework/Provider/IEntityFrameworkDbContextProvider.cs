@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Uranus.EntityFramework.Provider
 {
-    /// <summary>
-    /// IDbContextProvider
-    /// </summary>
-    /// <typeparam name="TDbContext"></typeparam>
-    public interface IEntityFrameworkDbContextProvider<out TDbContext>
+    public interface IEntityFrameworkDbContextProvider<out TDbContext> : IEntityFrameworkDbContextProvider
         where TDbContext : DbContext
     {
         TDbContext GetDbContext();
+    }
+
+    public interface IEntityFrameworkDbContextProvider
+    {
+
     }
 }

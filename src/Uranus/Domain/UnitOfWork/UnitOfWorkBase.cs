@@ -10,19 +10,22 @@ namespace Uranus.Domain.UnitOfWork
     public abstract class UnitOfWorkBase : IUnitOfWork
     {
 
+
         public event EventHandler Completed;
-
         public event EventHandler Disposed;
-
         public event EventHandler Failed;
 
 
         public string Id { get; private set; }
-
         public IUnitOfWork Outer { get; set; }
-
         public UnitOfWorkOption UnitOfWorkOption { get; private set; }
+        public bool IsDisposed { get; set; }
 
+
+        public UnitOfWorkBase()
+        {
+            Id = Guid.NewGuid().ToString("N");
+        }
 
         public void BeforeBegin()
         {
@@ -60,6 +63,13 @@ namespace Uranus.Domain.UnitOfWork
         }
         public void BeforeDispose()
         {
+            if (IsDisposed)
+            {
+                return;
+            }
+
+            IsDisposed = true;
+
             Dispose();
             Disposed?.Invoke(this, EventArgs.Empty);
         }

@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace Uranus.Domain
 {
-    /// <summary>
-    /// This interface must be implemented by all repositories to identify them by convention.
-    /// Implement generic version instead of this one.
-    /// </summary>
     public interface IRepository
     {
 
@@ -26,11 +22,13 @@ namespace Uranus.Domain
         IQueryable<TEntity> Sources { get; }
         IQueryable<TEntity> Models { get; }
 
-        IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> lambda, Expression<Func<TEntity, object>> includes = null);
+        IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> lambda);
+        Task<IQueryable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> lambda);
+
         TEntity Add(TEntity model);
         Task<TEntity> AddAsync(TEntity model);
-        IEnumerable<TEntity> AddRange(IEnumerable<TEntity> models);
-        Task<IEnumerable<TEntity>> AddRangeAsync(IEnumerable<TEntity> models);
+        void AddRange(IEnumerable<TEntity> models);
+        Task AddRangeAsync(IEnumerable<TEntity> models);
 
         void Update(TEntity model);
         Task UpdateAsync(TEntity model);
@@ -41,12 +39,12 @@ namespace Uranus.Domain
 
         TEntity Remove(TEntity model);
         Task<TEntity> RemoveAsync(TEntity model);
-        IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> models);
-        Task<IEnumerable<TEntity>> RemoveRangeAsync(IEnumerable<TEntity> models);
+        void RemoveRange(IEnumerable<TEntity> models);
+        Task RemoveRangeAsync(IEnumerable<TEntity> models);
         TEntity Remove(TPrimaryKey key);
         Task<TEntity> RemoveAsync(TPrimaryKey key);
-        IEnumerable<TEntity> RemoveRange(IEnumerable<TPrimaryKey> keys);
-        Task<IEnumerable<TEntity>> RemoveRangeAsync(IEnumerable<TPrimaryKey> keys);
+        void RemoveRange(IEnumerable<TPrimaryKey> keys);
+        Task RemoveRangeAsync(IEnumerable<TPrimaryKey> keys);
 
         bool Any(Expression<Func<TEntity, bool>> lambda);
         Task<bool> AnyAsync(Expression<Func<TEntity, bool>> lambda);

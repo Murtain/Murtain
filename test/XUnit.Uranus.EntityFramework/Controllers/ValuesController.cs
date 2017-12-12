@@ -3,17 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using XUnit.Uranus.EntityFramework.ApplicationServices;
+using Uranus.Domain.UnitOfWork;
+using Uranus.EntityFramework.Provider;
+using Microsoft.EntityFrameworkCore;
 
 namespace XUnit.Uranus.EntityFramework.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IServiceBarApplicationService serviceBarApplicationService;
+        private readonly IUnitOfWorkManager unitOfWorkManager;
+        private readonly IEntityFrameworkDbContextProvider<ModelsContainer> entityFrameworkDbContextProvider;
+        public ValuesController(IEntityFrameworkDbContextProvider<ModelsContainer> entityFrameworkDbContextProvider,IUnitOfWorkManager unitOfWorkManager,IServiceBarApplicationService serviceBarApplicationService)
+        {
+            this.entityFrameworkDbContextProvider = entityFrameworkDbContextProvider;
+            this.unitOfWorkManager = unitOfWorkManager;
+            this.serviceBarApplicationService = serviceBarApplicationService;
+        }
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<SDK.ServiceBar>> GetAsync()
         {
-            return new string[] { "value1", "value2" };
+            using (var uow = unitOfWorkManager.Begin())
+            {
+                
+                var entities = await serviceBarApplicationService.ServiceBarGetCollectionAsync("","");
+
+                return entities;
+            }
         }
 
         // GET api/values/5

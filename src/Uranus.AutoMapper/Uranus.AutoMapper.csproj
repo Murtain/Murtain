@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Uranus\Uranus.csproj" />
+  </ItemGroup>
+
 </Project>

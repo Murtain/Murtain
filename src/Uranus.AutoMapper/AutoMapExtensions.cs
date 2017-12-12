@@ -19,7 +19,7 @@ namespace Uranus.AutoMapper
         {
             return Mapper.Map<TDestination>(source);
         }
-
+        
         /// <summary>
         /// Execute a mapping from the source object to the existing destination object
         /// There must be a mapping between objects before calling this method.

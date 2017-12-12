@@ -14,8 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         public static IUranusBuilder AddUranus(this IServiceCollection services)
         {
-            var builder = new UranusBuilder(services);
-            return builder;
+            return new UranusBuilder(services);
         }
 
     }

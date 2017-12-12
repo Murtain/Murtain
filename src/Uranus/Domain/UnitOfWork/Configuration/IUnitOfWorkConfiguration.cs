@@ -9,8 +9,8 @@ namespace Uranus.Domain.UnitOfWork.Configuration
     {
         UnitOfWorkOption DefaultUnitOfWorkOption { get; set; }
 
-        EventHandler UnitOfWorkCompletedHandler { get; set; }
-        EventHandler UnitOfWorkFailedHandler { get; set; }
-        EventHandler UnitOfWorkDisposeHandler { get; set; }
+        //EventHandler UnitOfWorkCompletedHandler { get; set; }
+        //EventHandler UnitOfWorkFailedHandler { get; set; }
+        //EventHandler UnitOfWorkDisposeHandler { get; set; }
     }
 }

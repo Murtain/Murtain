@@ -1,10 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
+using Uranus.Builder;
 using Uranus.Caching;
 using Uranus.Caching.Configuration;
 using Uranus.Configuration;
+using Uranus.Domain;
+using Uranus.Domain.UnitOfWork;
+using Uranus.Domain.UnitOfWork.Configuration;
+using Uranus.Domain.UnitOfWork.Provider;
 using Uranus.Email;
 using Uranus.GlobalSetting;
 using Uranus.GlobalSetting.Configuration;
@@ -12,10 +18,46 @@ using Uranus.GlobalSetting.Provider;
 using Uranus.GlobalSetting.Store;
 using Uranus.Session;
 
-namespace Uranus.Builder
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IUranusBuilderExtensions
     {
+
+        public static IUranusBuilder AddUranusUnitOfWork(this IUranusBuilder builder,  Action<IUnitOfWorkConfiguration> setupAction)
+        {
+            builder.Services.AddSingleton<IUnitOfWorkConfiguration>(provider =>
+            {
+                var c = new UnitOfWorkConfiguration();
+                setupAction(c);
+                return c;
+            });
+
+            builder.Services.AddTransient<IUnitOfWorkProvider, UnitOfWorkProvider>();
+            builder.Services.AddTransient<IUnitOfWorkManager, UnitOfWorkManager>();
+
+            return builder;
+        }
+        public static IUranusBuilder AddUranusApplicationService(this IUranusBuilder builder, params Assembly[] assembly)
+        {
+
+            builder.Services.Scan(scan =>
+            {
+                scan.FromAssemblies(assembly)
+                          .AddClasses(c => c.Where(t => typeof(IApplicationService).IsAssignableFrom(t) && t != typeof(IApplicationService) && !t.IsAbstract))
+                          .AsImplementedInterfaces()
+                          .WithTransientLifetime();
+
+
+                scan.FromAssemblies(assembly)
+                          .AddClasses(c => c.AssignableTo(typeof(IRepository)))
+                          .AsImplementedInterfaces()
+                          .WithTransientLifetime();
+
+            });
+
+
+            return builder;
+        }
 
         public static IUranusBuilder AddCacheManager(this IUranusBuilder builder, Action<ICacheSettingsConfiguration> setupAction)
         {
@@ -32,7 +74,7 @@ namespace Uranus.Builder
 
             builder.Services.Scan(scan =>
             {
-                scan.FromApplicationDependencies()
+                scan.FromAssembliesOf(typeof(CacheSettingProvider))
                           .AddClasses(c => c.AssignableTo(typeof(CacheSettingProvider)))
                           .AsSelf()
                           .WithSingletonLifetime();
@@ -55,7 +97,7 @@ namespace Uranus.Builder
 
             builder.Services.Scan(scan =>
             {
-                scan.FromApplicationDependencies()
+                scan.FromAssembliesOf(typeof(GlobalSettingProvider))
                           .AddClasses(c => c.AssignableTo(typeof(GlobalSettingProvider)))
                           .AsSelf()
                           .WithSingletonLifetime();
@@ -64,10 +106,9 @@ namespace Uranus.Builder
             return builder;
         }
 
-        public static IUranusBuilder AddIUserSession(this IUranusBuilder builder)
+        public static IUranusBuilder AddClaimsUserSession(this IUranusBuilder builder)
         {
             builder.Services.AddTransient<IUserSession, ClaimsUserSession>();
-            builder.Services.AddSingleton<EmailGlobalSettingProvider>();
             return builder;
         }
 

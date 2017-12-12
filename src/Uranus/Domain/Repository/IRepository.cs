@@ -43,12 +43,13 @@ namespace Uranus.Domain.Repository
 
         TEntity Remove(TEntity model);
         Task<TEntity> RemoveAsync(TEntity model);
-        IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> models);
-        Task<IEnumerable<TEntity>> RemoveRangeAsync(IEnumerable<TEntity> models);
+        Task RemoveRange(IEnumerable<TEntity> models);
+        Task RemoveRangeAsync(IEnumerable<TEntity> models);
+
         TEntity Remove(TPrimaryKey key);
         Task<TEntity> RemoveAsync(TPrimaryKey key);
-        IEnumerable<TEntity> RemoveRange(IEnumerable<TPrimaryKey> keys);
-        Task<IEnumerable<TEntity>> RemoveRangeAsync(IEnumerable<TPrimaryKey> keys);
+        Task RemoveRange(IEnumerable<TPrimaryKey> keys);
+        Task RemoveRangeAsync(IEnumerable<TPrimaryKey> keys);
 
         bool Any(Expression<Func<TEntity, bool>> lambda);
         Task<bool> AnyAsync(Expression<Func<TEntity, bool>> lambda);
