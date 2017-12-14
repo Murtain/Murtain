@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="2.0.0-preview1-final" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.5" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="6.10.5" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Murtain.AutoMapper\Murtain.AutoMapper.csproj" />
+    <ProjectReference Include="..\..\src\Murtain.EntityFramework\Murtain.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\src\Murtain\Murtain.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.ApplicationService\Murtain.Angela.ApplicationService.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Core\Murtain.Angela.Core.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Domain\Murtain.Angela.Domain.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Infrastructure\Murtain.Angela.Infrastructure.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.SDK\Murtain.Angela.SDK.csproj" />
+  </ItemGroup>
+
+</Project>

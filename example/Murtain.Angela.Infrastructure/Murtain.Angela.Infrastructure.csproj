@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Murtain.EntityFramework\Murtain.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\src\Murtain\Murtain.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Domain\Murtain.Angela.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

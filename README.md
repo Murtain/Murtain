@@ -1,6 +1,6 @@
 ### 概述
 
-Uranus 是包含常用模块的轻量快速开发应用程序框架。
+Murtain 是包含常用模块的轻量快速开发应用程序框架。
 
 ### 设计目标
 
@@ -16,4 +16,4 @@ Uranus 是包含常用模块的轻量快速开发应用程序框架。
 
 ### LICENSE
 
-[MIT](https://github.com/Murtain/Uranus/blob/master/LICENSE)
+[MIT](https://github.com/Murtain/Murtain/blob/master/LICENSE)

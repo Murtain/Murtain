@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  xunit.uranus.caching:
-    image: xunit.uranus.caching
+  xunit.Murtain.caching:
+    image: xunit.Murtain.caching
     build:
-      context: ./XUnit.Uranus.Caching
+      context: ./XUnit.Murtain.Caching
       dockerfile: Dockerfile

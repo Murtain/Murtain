@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Murtain\Murtain.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Core\Murtain.Angela.Core.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Domain\Murtain.Angela.Domain.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.Infrastructure\Murtain.Angela.Infrastructure.csproj" />
+    <ProjectReference Include="..\Murtain.Angela.SDK\Murtain.Angela.SDK.csproj" />
+  </ItemGroup>
+
+</Project>

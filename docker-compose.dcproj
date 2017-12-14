@@ -6,7 +6,7 @@
     <ProjectGuid>f771c511-0a53-4f0c-8b3c-225395b07e0b</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>xunit.uranus.caching</DockerServiceName>
+    <DockerServiceName>xunit.Murtain.caching</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />
