@@ -12,7 +12,7 @@ namespace Murtain.Collections
 {
     public static class AssemblyLoader
     {
-        private const string ASSEMBLY_SKIP_LOADER_PARTTERN = "^System|^Microsoft|^AutoMapper";
+        private const string ASSEMBLY_SKIP_LOADER_PARTTERN = "^System|^Microsoft|^AutoMapper|^IdentityServer|^Pomelo";
 
         public static Assembly[] GetAssemblies()
         {

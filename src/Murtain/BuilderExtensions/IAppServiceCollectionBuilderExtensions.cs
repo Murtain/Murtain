@@ -18,11 +18,42 @@ using Murtain.GlobalSetting.Provider;
 using Murtain.GlobalSetting.Store;
 using Murtain.Session;
 using Murtain.Collections;
+using Murtain.Dependency;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IAppServiceCollectionBuilderExtensions
     {
+        public static IAppServiceCollectionBuilder AddDependency(this IAppServiceCollectionBuilder builder)
+        {
+            builder.Services.Scan(scan =>
+            {
+                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
+                          .AddClasses(c => c.Where(t => typeof(ITransientDependency).IsAssignableFrom(t) && t != typeof(ITransientDependency) && !t.IsAbstract))
+                          .AsImplementedInterfaces()
+                          .WithTransientLifetime();
+
+
+                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
+                          .AddClasses(c => c.Where(t => typeof(ISingletonDependency).IsAssignableFrom(t) && t != typeof(ISingletonDependency) && !t.IsAbstract))
+                          .AsImplementedInterfaces()
+                          .WithSingletonLifetime();
+
+
+                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
+                          .AddClasses(c => c.Where(t => typeof(IApplicationService).IsAssignableFrom(t) && t != typeof(IApplicationService) && !t.IsAbstract))
+                          .AsImplementedInterfaces()
+                          .WithTransientLifetime();
+
+
+                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
+                          .AddClasses(c => c.AssignableTo(typeof(IRepository)))
+                          .AsImplementedInterfaces()
+                          .WithTransientLifetime();
+
+            });
+            return builder;
+        }
 
         public static IAppServiceCollectionBuilder AddUnitOfWork(this IAppServiceCollectionBuilder builder, Action<IUnitOfWorkConfiguration> invoke = null)
         {
@@ -39,23 +70,9 @@ namespace Microsoft.Extensions.DependencyInjection
             return builder;
         }
 
-        public static IAppServiceCollectionBuilder AddApplicationService(this IAppServiceCollectionBuilder builder)
+        public static IAppServiceCollectionBuilder AddLoggerInterception(this IAppServiceCollectionBuilder builder)
         {
-            builder.Services.Scan(scan =>
-            {
-                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
-                          .AddClasses(c => c.Where(t => typeof(IApplicationService).IsAssignableFrom(t) && t != typeof(IApplicationService) && !t.IsAbstract))
-                          .AsImplementedInterfaces()
-                          .WithTransientLifetime();
-
-
-                scan.FromAssemblies(AssemblyLoader.GetAssemblies())
-                          .AddClasses(c => c.AssignableTo(typeof(IRepository)))
-                          .AsImplementedInterfaces()
-                          .WithTransientLifetime();
-
-            });
-
+            builder.Services.AddInterception();
             return builder;
         }
 

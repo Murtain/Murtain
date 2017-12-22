@@ -17,4 +17,8 @@
     <ProjectReference Include="..\..\src\Murtain\Murtain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interception\" />
+  </ItemGroup>
+
 </Project>
